@@ -27,33 +27,9 @@ La estructura de directorios del proyecto es la siguiente:
 └─ Server.js                # Configuración y ejecución del servidor
 ```
 
-## Instalación
-Clona el repositorio:
-
-```
-git clone https://github.com/Vahen1981/Proyecto-6.git
-cd proyecto-6
-```
-
-Instala las dependencias:
-```
-npm install
-```
-
-Crea un archivo .env en la raíz del proyecto y configura las siguientes variables de entorno:
-
-```
-MONGODB_URI=tu_conexion_de_mongodb
-SECRET=tu_clave_secreta_jwt
-PORT=8000
-```
-
 ## Uso
-Inicia el servidor con nodemon:
-```
-nodemon Server.js
-```
-La API estará disponible en http://localhost:8000
+El servidor está desplegado en Railway y se puede acceder a través de la siguiente URL:  
+[https://proyecto-6-production.up.railway.app](https://proyecto-6-production.up.railway.app)
 
 ## Endpoints
 ### Usuarios
