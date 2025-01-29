@@ -70,5 +70,12 @@ exports.userLogin = async (req, res) => {
 }
 
 exports.userVerify = async (req, res) => {
-
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.json({ user });
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error al verificar el usuario' });
+    }
 }
