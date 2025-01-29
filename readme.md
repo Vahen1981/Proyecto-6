@@ -55,41 +55,43 @@ La API estará disponible en http://localhost:8000
 ## Endpoints
 ### Usuarios
 
-POST /api/user/register: Registra un nuevo usuario.
-Body: { name, email, password }
-Respuesta: Información del usuario creado (sin el password).
+- `POST /api/user/register`: Registra un nuevo usuario.  
+  **Body**: `{ name, email, password }`  
+  **Respuesta**: Información del usuario creado (sin el password).
 
-POST /api/user/login: Inicia sesión y obtiene un token JWT.
-Body: { email, password }
-Respuesta: Token JWT.
+- `POST /api/user/login`: Inicia sesión y obtiene un token JWT.  
+  **Body**: `{ email, password }`  
+  **Respuesta**: Token JWT.
 
-GET /api/user/verify: Verifica el usuario actual (requiere autenticación).
-Respuesta: Información del usuario verificado.
+- `GET /api/user/verify`: Verifica el usuario actual (requiere autenticación).  
+  **Respuesta**: Información del usuario verificado.
 
-PUT /api/user/update: Actualiza los datos del usuario (requiere autenticación).
-Body: { name, email, password }
-Respuesta: Información actualizada del usuario.
+- `PUT /api/user/update`: Actualiza los datos del usuario (requiere autenticación).  
+  **Body**: `{ name, email, password }`  
+  **Respuesta**: Información actualizada del usuario.
 
-DELETE /api/user/delete: Elimina el usuario (requiere autenticación).
-Respuesta: Mensaje de confirmación.
+- `DELETE /api/user/delete`: Elimina el usuario (requiere autenticación).  
+  **Respuesta**: Mensaje de confirmación.
 
 ### Ropa
-POST /api/clothes/create-clothes: Crea una nueva prenda de ropa.
-Body: { clothingType, brand, size, price, description }
-Respuesta: Detalles de la prenda creada.
 
-GET /api/clothes/all-clothes: Obtiene todas las prendas de ropa.
-Respuesta: Lista de todas las prendas.
+- `POST /api/clothes/create-clothes`: Crea una nueva prenda de ropa.  
+  **Body**: `{ clothingType, brand, size, price, description }`  
+  **Respuesta**: Detalles de la prenda creada.
 
-GET /api/clothes/get-clothes/:id: Obtiene una prenda de ropa por su ID.
-Respuesta: Detalles de la prenda.
+- `GET /api/clothes/all-clothes`: Obtiene todas las prendas de ropa.  
+  **Respuesta**: Lista de todas las prendas.
 
-PUT /api/clothes/update-clothes/:id: Actualiza una prenda de ropa.
-Body: { clothingType, brand, size, price, description }
-Respuesta: Detalles de la prenda actualizada.
+- `GET /api/clothes/get-clothes/:id`: Obtiene una prenda de ropa por su ID.  
+  **Respuesta**: Detalles de la prenda.
 
-DELETE /api/clothes/delete-clothes/:id: Elimina una prenda de ropa.
-Respuesta: Mensaje de confirmación.
+- `PUT /api/clothes/update-clothes/:id`: Actualiza una prenda de ropa.  
+  **Body**: `{ clothingType, brand, size, price, description }`  
+  **Respuesta**: Detalles de la prenda actualizada.
+
+- `DELETE /api/clothes/delete-clothes/:id`: Elimina una prenda de ropa.  
+  **Respuesta**: Mensaje de confirmación.
 
 ## Middleware de Autenticación
-La autenticación de usuarios se maneja a través de JWT. Para acceder a las rutas protegidas, el usuario debe incluir un token en el encabezado de autorización como Bearer <token>.
+
+La autenticación de usuarios se maneja a través de JWT. Para acceder a las rutas protegidas, el usuario debe incluir un token en el encabezado de autorización como `Bearer <token>`.
