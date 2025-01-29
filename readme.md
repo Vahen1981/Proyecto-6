@@ -8,23 +8,23 @@ Este proyecto es una aplicación backend desarrollada con Node.js y Express, que
 ## Estructura del Proyecto
 La estructura de directorios del proyecto es la siguiente:
 ```
-├─ .env                # Variables de entorno
-├─ .gitignore          # Archivos y directorios a ignorar por Git
-├─ README.md           # Este archivo
-├─ controllers         # Controladores de las rutas
+├─ .env                     # Variables de entorno
+├─ .gitignore               # Archivos y directorios a ignorar por Git
+├─ README.md                # Este archivo
+├─ controllers              # Controladores de las rutas
 │  ├─ clothesController.js  # Lógica para la gestión de ropa
-│  └─ userController.js    # Lógica para la gestión de usuarios
-├─ config              # Configuración de la base de datos
-│  ├─ db.js            # Conexión a MongoDB
-├─ middleware          # Middleware de autorización
-│  └─ Authorization.js # Middleware para la verificación de JWT
-├─ models              # Modelos de datos
-│  ├─ Clothes.js       # Esquema de ropa
-│  └─ User.js          # Esquema de usuario
-├─ routes              # Rutas de la API
-│  ├─ clothesRoutes.js # Rutas para ropa
-│  └─ userRoutes.js    # Rutas para usuarios
-└─ Server.js           # Configuración y ejecución del servidor
+│  └─ userController.js     # Lógica para la gestión de usuarios
+├─ config                   # Configuración de la base de datos
+│  ├─ db.js                 # Conexión a MongoDB
+├─ middleware               # Middleware de autorización
+│  └─ Authorization.js      # Middleware para la verificación de JWT
+├─ models                   # Modelos de datos
+│  ├─ Clothes.js            # Esquema de ropa
+│  └─ User.js               # Esquema de usuario
+├─ routes                   # Rutas de la API
+│  ├─ clothesRoutes.js      # Rutas para ropa
+│  └─ userRoutes.js         # Rutas para usuarios
+└─ Server.js                # Configuración y ejecución del servidor
 ```
 
 ## Instalación
