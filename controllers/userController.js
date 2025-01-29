@@ -39,3 +39,36 @@ exports.registerUser = async (req, res) => {
         return res.status(400).json({ message: 'Error al crear usuario' });
     }
 }
+
+exports.userLogin = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const registeredUser = await User.findOne({ email });
+        if(!registeredUser){
+            return res.status(400).json({ message: 'El usuario o la contraseña no corresponde' });
+        }
+        const rightPassword = await bcryptjs.compare(password, registeredUser.password);
+        if(!rightPassword){
+            return res.status(400).json({ message: 'El usuario o la contraseña no corresponde' });
+        }
+        const payload = { user: { id: registeredUser.id } };
+        jsonwebtoken.sign(
+            payload,
+            process.env.SECRET,
+            {
+                expiresIn: 120
+            },
+            (error, token) => {
+                if (error) throw error;
+                res.json({ token });
+            }
+        )
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error al iniciar sesión' });
+    }
+}
+
+exports.userVerify = async (req, res) => {
+
+}
