@@ -56,7 +56,7 @@ exports.userLogin = async (req, res) => {
             payload,
             process.env.SECRET,
             {
-                expiresIn: 120
+                expiresIn: 180
             },
             (error, token) => {
                 if (error) throw error;
@@ -77,5 +77,55 @@ exports.userVerify = async (req, res) => {
     catch (error) {
         console.error(error);
         return res.status(500).json({ message: 'Error al verificar el usuario' });
+    }
+}
+
+exports.updateVerifiedUser = async (req, res) => {
+    try {
+        const { name, email, password } = req.body;
+        const userId = req.user.id;
+
+        if (email) {
+            const emailExist = await User.findOne({ email });
+            if (emailExist && emailExist.id !== userId) {
+                return res.status(400).json({ message: 'El correo ya está registrado por otro usuario' });
+            }
+        }
+
+        let hashedPassword = password;
+        if (password) {
+            const salt = await bcryptjs.genSalt(10);
+            hashedPassword = await bcryptjs.hash(password, salt);
+        }
+
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            { name, email, password: hashedPassword },
+            { new: true }
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        return res.status(201).json({ 
+            name: updatedUser.name, 
+            email: updatedUser.email 
+        });
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error al actualizar el usuario' });
+    }
+};
+
+exports.deleteVerifiedUser = async(req, res) => {
+    try {
+        const userId = req.user.id;
+        const deletedUser = await User.findByIdAndDelete(userId);
+        return res.json({ message: 'Usuario eliminado correctamente' });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error al eliminar el usuario' });
     }
 }
