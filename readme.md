@@ -57,6 +57,7 @@ La API estará disponible en http://localhost:8000
 
 ## Endpoints
 ### Usuarios
+Para las solicitudes de verificación(`/verify`), actualización de datos de usuario(`/update`) y eliminar usuario (`/delete`) es necesario haber iniciado sesión antes e incluir el token al realizar la solicitud
 
 - `POST /api/user/register`: Registra un nuevo usuario.  
   **Body**: `{ name, email, password }`  
