@@ -49,11 +49,11 @@ PORT=8000
 ```
 
 ## Uso
-Inicia el servidor:
+Inicia el servidor con nodemon:
 ```
-npm start
+nodemon Server.js
+```
 La API estará disponible en http://localhost:8000
-```
 
 ## Endpoints
 ### Usuarios
