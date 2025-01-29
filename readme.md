@@ -33,7 +33,7 @@ El servidor está desplegado en Railway y se puede acceder a través de la sigui
 
 ## Endpoints
 ### Usuarios
-Para las solicitudes de verificación(`/verify`), actualización de datos de usuario(`/update`) y eliminar usuario (`/delete`) es necesario haber iniciado sesión antes e incluir el token al realizar la solicitud
+Para las solicitudes de verificación(`/verify`), actualización de datos de usuario(`/update`) y eliminar usuario (`/delete`) es necesario haber iniciado sesión antes e incluir el token al realizar la solicitud. Luego de iniciar sesión el token expirará en 3 minutos.
 
 - `POST /api/user/register`: Registra un nuevo usuario.  
   **Body**: `{ name, email, password }`  
