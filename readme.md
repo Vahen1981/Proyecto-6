@@ -1,8 +1,11 @@
 # Proyecto 6: Aplicación Backend con Autenticación
 ## Descripción
-Este proyecto es una aplicación de backend desarrollada con Node.js y Express, que implementa un sistema de autenticación basado en JWT (JSON Web Tokens). La aplicación permite la gestión de usuarios y ropa, incluyendo registro, inicio de sesión y actualización de datos de usuario. Además, permite CRUD (Crear, Leer, Actualizar, Eliminar) para la gestión de productos de ropa.
+Este proyecto es una aplicación backend desarrollada con Node.js y Express, que implementa autenticación mediante JWT (JSON Web Tokens). Permite la gestión de usuarios y productos de ropa, ofreciendo operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para ambos:
 
-Estructura del Proyecto
+- **Usuarios:** Registro, inicio de sesión, actualización de datos y eliminación de cuentas.
+- **Productos de ropa:** Creación, consulta, actualización y eliminación de prendas.
+
+## Estructura del Proyecto
 La estructura de directorios del proyecto es la siguiente:
 ```
 ├─ .env                # Variables de entorno
@@ -94,4 +97,4 @@ La API estará disponible en http://localhost:8000
 
 ## Middleware de Autenticación
 
-La autenticación de usuarios se maneja a través de JWT. Para acceder a las rutas protegidas, el usuario debe incluir un token en el encabezado de autorización como `Bearer <token>`.
+La autenticación de usuarios se maneja a través de JWT. Para acceder a las rutas protegidas, el usuario debe incluir un token en el encabezado de autorización `Bearer` o `Token`.
