@@ -5,6 +5,20 @@ Este proyecto es una aplicación backend desarrollada con Node.js y Express, que
 - **Usuarios:** Registro, inicio de sesión, actualización de datos y eliminación de cuentas.
 - **Productos de ropa:** Creación, consulta, actualización y eliminación de prendas.
 
+## Tecnologías Utilizadas
+
+Este proyecto utiliza una serie de tecnologías y herramientas para su desarrollo. A continuación se enumeran las principales:
+
+- **Node.js**: Entorno de ejecución de JavaScript del lado del servidor.
+- **Express**: Framework web para Node.js que facilita la creación de API RESTful.
+- **MongoDB**: Base de datos NoSQL utilizada para almacenar información de usuarios y productos.
+- **Mongoose**: Biblioteca para modelar objetos MongoDB en Node.js.
+- **JWT (JSON Web Tokens)**: Tecnología para la autenticación de usuarios mediante tokens seguros.
+- **bcryptjs**: Librería para el cifrado y descifrado de contraseñas.
+- **dotenv**: Permite gestionar las variables de entorno desde un archivo `.env`.
+- **CORS**: Middleware para habilitar el intercambio de recursos entre dominios (Cross-Origin Resource Sharing).
+- **Railway**: Plataforma de despliegue y hosting para aplicaciones backend.
+
 ## Estructura del Proyecto
 La estructura de directorios del proyecto es la siguiente:
 ```
