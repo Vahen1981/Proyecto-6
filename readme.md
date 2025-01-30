@@ -61,11 +61,11 @@ Para las solicitudes de verificación(`/verify`), actualización de datos de usu
 - `GET /api/user/verify`: Verifica el usuario actual (requiere autenticación).  
   **Respuesta**: Información del usuario verificado.
 
-- `PUT /api/user/update`: Actualiza los datos del usuario (requiere autenticación).  
+- `PUT /api/user/update`: Actualiza los datos del usuario (requiere autenticación y se actualizará al usuario que está autenticado).  
   **Body**: `{ name, email, password }`  
   **Respuesta**: Información actualizada del usuario.
 
-- `DELETE /api/user/delete`: Elimina el usuario (requiere autenticación).  
+- `DELETE /api/user/delete`: Elimina el usuario (requiere autenticación y se eliminará al usuario que está autenticado).  
   **Respuesta**: Mensaje de confirmación.
 
 ### Ropa
