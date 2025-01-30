@@ -11,13 +11,14 @@ Este proyecto utiliza una serie de tecnologías y herramientas para su desarroll
 
 - **Node.js**: Entorno de ejecución de JavaScript del lado del servidor.
 - **Express**: Framework web para Node.js que facilita la creación de API RESTful.
-- **MongoDB**: Base de datos NoSQL utilizada para almacenar información de usuarios y productos.
+- **MongoDB Atlas**: Servicio de base de datos NoSQL en la nube para almacenar información de usuarios y productos.
 - **Mongoose**: Biblioteca para modelar objetos MongoDB en Node.js.
 - **JWT (JSON Web Tokens)**: Tecnología para la autenticación de usuarios mediante tokens seguros.
 - **bcryptjs**: Librería para el cifrado y descifrado de contraseñas.
 - **dotenv**: Permite gestionar las variables de entorno desde un archivo `.env`.
 - **CORS**: Middleware para habilitar el intercambio de recursos entre dominios (Cross-Origin Resource Sharing).
 - **Railway**: Plataforma de despliegue y hosting para aplicaciones backend.
+
 
 ## Estructura del Proyecto
 La estructura de directorios del proyecto es la siguiente:
