@@ -55,7 +55,7 @@ Para las solicitudes de verificación(`/verify`), actualización de datos de usu
   **Respuesta**: Información del usuario creado (sin el password).
 
 - `POST /api/user/login`: Inicia sesión y obtiene un token JWT.  
-  **Body**: `{ email, password }`
+  **Body**: `{ email, password }`  
   **Respuesta**: Token JWT.
 
 - `GET /api/user/verify`: Verifica el usuario actual (requiere autenticación).
