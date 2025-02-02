@@ -55,14 +55,16 @@ Para las solicitudes de verificación(`/verify`), actualización de datos de usu
   **Respuesta**: Información del usuario creado (sin el password).
 
 - `POST /api/user/login`: Inicia sesión y obtiene un token JWT.  
-  **Body**: `{ email, password }`  
+  **Body**: `{ email, password }`
   **Respuesta**: Token JWT.
 
-- `GET /api/user/verify`: Verifica el usuario actual (requiere autenticación).  
+- `GET /api/user/verify`: Verifica el usuario actual (requiere autenticación).
+  Se ingresa el header "Authorization" con el valor del token entregado al iniciar sesión (incluir el prefijo "Bearer ")
   **Respuesta**: Información del usuario verificado.
 
-- `PUT /api/user/update`: Actualiza los datos del usuario (requiere autenticación y se actualizará al usuario que está autenticado).  
-  **Body**: `{ name, email, password }`  
+- `PUT /api/user/update`: Actualiza los datos del usuario (requiere autenticación y se actualizará al usuario que está autenticado).
+  Se ingresa el header "Authorization" con el valor del token entregado al iniciar sesión (incluir el prefijo "Bearer ")  
+  **Body**: `{ name, email, password }`, se puede ingresar cualquiera de estos valores
   **Respuesta**: Información actualizada del usuario.
 
 - `DELETE /api/user/delete`: Elimina el usuario (requiere autenticación y se eliminará al usuario que está autenticado).  
